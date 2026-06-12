@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CarLauncher" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#FF6B35</item>
+        <item name="colorPrimaryDark">#CC5429</item>
+        <item name="colorAccent">#FF6B35</item>
+        <item name="android:windowBackground">#0D0D0D</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="NavBtn" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#CCCCCC</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="MediaBtn" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+</resources>

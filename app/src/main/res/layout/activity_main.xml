@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0D0D0D">
+
+    <!-- 顶部：时钟 + 天气 -->
+    <LinearLayout
+        android:id="@+id/ll_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:gravity="center_vertical"
+        android:background="#1A1A1A">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="01月01日 星期一"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"/>
+
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加载中..."
+            android:textColor="#CCCCCC"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <!-- 应用网格（占剩余空间） -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_apps"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"/>
+
+    <!-- 媒体控制栏 -->
+    <LinearLayout
+        android:id="@+id/ll_media_bar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#161616">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_media_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未在播放"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tv_media_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tv_media_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点此开启通知监听权限"
+                android:textColor="#FF6B35"
+                android:textSize="11sp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_prev"
+            style="@style/MediaBtn"
+            android:text="上一首"
+            android:layout_marginRight="4dp"/>
+
+        <Button
+            android:id="@+id/btn_play_pause"
+            style="@style/MediaBtn"
+            android:text="播放"
+            android:layout_marginRight="4dp"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/MediaBtn"
+            android:text="下一首"/>
+
+    </LinearLayout>
+
+    <!-- 底部导航栏 -->
+    <LinearLayout
+        android:id="@+id/ll_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#111111">
+
+        <Button
+            android:id="@+id/btn_back"
+            style="@style/NavBtn"
+            android:text="返回"/>
+
+        <Button
+            android:id="@+id/btn_home"
+            style="@style/NavBtn"
+            android:text="主页"/>
+
+        <Button
+            android:id="@+id/btn_recents"
+            style="@style/NavBtn"
+            android:text="最近"/>
+
+        <Button
+            android:id="@+id/btn_settings"
+            style="@style/NavBtn"
+            android:text="设置"/>
+
+    </LinearLayout>
+
+</LinearLayout>
