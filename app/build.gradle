@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace 'com.carlauncher'
     compileSdk 34
     defaultConfig {
         applicationId "com.carlauncher"
@@ -11,7 +12,6 @@ android {
         targetSdk 19
         versionCode 1
         versionName "1.0"
-        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         debug {
@@ -26,12 +26,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions { jvmTarget = '1.8' }
-    viewBinding { enabled = true }
-    // 航盛车机屏幕分辨率适配
-    splits {
-        density { enable false }
-        abi { enable false }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
     }
 }
 
@@ -39,11 +38,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
-    // OkHttp 3.12.x 最后支持 Android 4.x 的版本
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.squareup.okhttp3:okhttp:3.12.13'
     implementation 'org.json:json:20231013'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
-    // 不使用 Material，用 AppCompat 替代，兼容 4.1
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
